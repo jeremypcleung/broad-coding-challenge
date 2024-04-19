@@ -38,6 +38,7 @@ class TestMBTAFunctions(unittest.TestCase):
 
     def test_getPathBetweenTwoRoutes(self):
         routeToConnections = getRouteToConnections(self.stopsRoutesInfo["stopsToRoutes"], self.stopsRoutesInfo["stopsWithMultipleRoutes"])
+        # Spot check a couple varying number of route transfers
         self.assertEqual(getPathBetweenTwoRoutes("Red Line", "Blue Line", routeToConnections),['Red Line','Green Line B','Blue Line'])
         self.assertEqual(getPathBetweenTwoRoutes("Red Line", "Red Line", routeToConnections),['Red Line'])
         self.assertEqual(getPathBetweenTwoRoutes("Red Line", "Mattapan Trolley", routeToConnections),['Red Line','Mattapan Trolley'])
